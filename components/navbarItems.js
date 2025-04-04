@@ -10,7 +10,8 @@ export default function NavbarItems({title,param}) {
 
   return (
     <div>
-      <Link href={`/?genre=${param}`} className={`hover:text-amber-50 ${genre === param ? 'underline underline-offset-8 decoration-4 decoration-amber-50 rounded-lg' : ''}`}>{title}</Link>
+      <Link href={`/?genre=${param}`} className={`hover:text-amber-50 ${genre === param ? 'underline underline-offset-8 decoration-4 decoration-amber-50 rounded-lg' : ''}`}>
+      {title}</Link>
     </div>
   )
 }
