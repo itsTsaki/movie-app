@@ -6,7 +6,7 @@ const URL = process.env.TMDB_URL
 export default async function Home({searchParams}) {
   
   const genre = await searchParams.genre || 'fetchTrending';
-  const res = await fetch(`${URL}${genre === 'fetchTopRated' ? `/movie/top_rated` : `/trending/all/week`}?api_key=${API_KEY}&language=en-US&page=1`);
+  const res = await fetch(`${URL}${genre === 'fetchTopRated' ? `/movie/top_rated` : genre === 'fetchTV' ? `/trending/tv/day` : `/trending/all/week`}?api_key=${API_KEY}&language=en-US&page=1`);
   const data = await res.json();
   if(!res.ok){
     throw new Error('Something went wrong')
